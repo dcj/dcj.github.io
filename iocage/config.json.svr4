@@ -1,0 +1,17 @@
+{
+    "allow_raw_sockets": 1,
+    "allow_sysvipc": 1,
+    "boot": 1,
+    "cloned_release": "12.2-RELEASE",
+    "defaultrouter": "192.168.132.1",
+    "host_hostname": "kafka.aircraft-noise.org",
+    "host_hostuuid": "kafka",
+    "interfaces": "vnet0:bridge0,vnet1:bridge1",
+    "ip4_addr": "vnet0|192.168.132.202/24,vnet1|198.17.128.202/24",
+    "jail_zfs_dataset": "iocage/jails/kafka/data",
+    "last_started": "2020-11-17 22:35:29",
+    "release": "12.2-RELEASE",
+    "vnet": 1,
+    "vnet0_mac": "003048d977cb 003048d977cc",
+    "vnet1_mac": "00304854309d 00304854309e"
+}

@@ -1,0 +1,110 @@
+igb0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	options=a520b9<RXCSUM,VLAN_MTU,VLAN_HWTAGGING,JUMBO_MTU,VLAN_HWCSUM,WOL_MAGIC,VLAN_HWFILTER,VLAN_HWTSO,RXCSUM_IPV6>
+	ether 00:30:48:dc:a9:fe
+	inet 192.168.132.35 netmask 0xffffff00 broadcast 192.168.132.255
+	media: Ethernet autoselect (1000baseT <full-duplex>)
+	status: active
+	nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
+igb1: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	options=a520b9<RXCSUM,VLAN_MTU,VLAN_HWTAGGING,JUMBO_MTU,VLAN_HWCSUM,WOL_MAGIC,VLAN_HWFILTER,VLAN_HWTSO,RXCSUM_IPV6>
+	ether 00:30:48:dc:a9:ff
+	media: Ethernet autoselect (1000baseT <full-duplex>)
+	status: active
+	nd6 options=29<PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL>
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> metric 0 mtu 16384
+	options=680003<RXCSUM,TXCSUM,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6>
+	inet6 ::1 prefixlen 128
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x3
+	inet 127.0.0.1 netmask 0xff000000
+	groups: lo
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+bridge0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	ether 02:2d:44:af:40:00
+	id 00:00:00:00:00:00 priority 32768 hellotime 2 fwddelay 15
+	maxage 20 holdcnt 6 proto stp-rstp maxaddr 2000 timeout 1200
+	root id 00:00:00:00:00:00 priority 32768 ifcost 0 port 0
+	member: vnet0.10 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 6 priority 128 path cost 2000
+	member: vnet0.3 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 10 priority 128 path cost 2000
+	member: vnet0.2 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 8 priority 128 path cost 2000
+	member: igb0 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 1 priority 128 path cost 2000000
+	groups: bridge
+	nd6 options=9<PERFORMNUD,IFDISABLED>
+bridge1: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	ether 02:2d:44:af:40:01
+	id 00:00:00:00:00:00 priority 32768 hellotime 2 fwddelay 15
+	maxage 20 holdcnt 6 proto stp-rstp maxaddr 2000 timeout 1200
+	root id 00:00:00:00:00:00 priority 32768 ifcost 0 port 0
+	member: vnet1.10 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 7 priority 128 path cost 2000
+	member: vnet1.3 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 11 priority 128 path cost 2000
+	member: vnet1.2 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 9 priority 128 path cost 2000
+	member: igb1 flags=143<LEARNING,DISCOVER,AUTOEDGE,AUTOPTP>
+	        ifmaxaddr 0 port 2 priority 128 path cost 2000000
+	groups: bridge
+	nd6 options=9<PERFORMNUD,IFDISABLED>
+vnet0.2: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	description: associated with jail: webapp1 as nic: epair0b
+	options=8<VLAN_MTU>
+	ether 00:30:48:f7:d2:bc
+	hwaddr 02:dd:e3:fc:cc:0a
+	inet6 fe80::230:48ff:fef7:d2bc%vnet0.2 prefixlen 64 scopeid 0x8
+	groups: epair
+	media: Ethernet 10Gbase-T (10Gbase-T <full-duplex>)
+	status: active
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+vnet1.2: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	description: associated with jail: webapp1 as nic: epair1b
+	options=8<VLAN_MTU>
+	ether 00:30:48:4c:42:43
+	hwaddr 02:69:f8:ef:a5:0a
+	inet6 fe80::230:48ff:fe4c:4243%vnet1.2 prefixlen 64 scopeid 0x9
+	groups: epair
+	media: Ethernet 10Gbase-T (10Gbase-T <full-duplex>)
+	status: active
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+vnet0.3: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	description: associated with jail: webapp2 as nic: epair0b
+	options=8<VLAN_MTU>
+	ether 00:30:48:9e:eb:0d
+	hwaddr 02:90:20:42:e7:0a
+	inet6 fe80::230:48ff:fe9e:eb0d%vnet0.3 prefixlen 64 scopeid 0xa
+	groups: epair
+	media: Ethernet 10Gbase-T (10Gbase-T <full-duplex>)
+	status: active
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+vnet1.3: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	description: associated with jail: webapp2 as nic: epair1b
+	options=8<VLAN_MTU>
+	ether 00:30:48:6e:6c:e4
+	hwaddr 02:69:70:fd:c0:0a
+	inet6 fe80::230:48ff:fe6e:6ce4%vnet1.3 prefixlen 64 scopeid 0xb
+	groups: epair
+	media: Ethernet 10Gbase-T (10Gbase-T <full-duplex>)
+	status: active
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+vnet0.10: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	description: associated with jail: kafka as nic: epair0b
+	options=8<VLAN_MTU>
+	ether 00:30:48:d9:77:cb
+	hwaddr 02:71:40:f3:59:0a
+	inet6 fe80::230:48ff:fed9:77cb%vnet0.10 prefixlen 64 scopeid 0x6
+	groups: epair
+	media: Ethernet 10Gbase-T (10Gbase-T <full-duplex>)
+	status: active
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
+vnet1.10: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	description: associated with jail: kafka as nic: epair1b
+	options=8<VLAN_MTU>
+	ether 00:30:48:54:30:9d
+	hwaddr 02:a0:9c:f5:2c:0a
+	inet6 fe80::230:48ff:fe54:309d%vnet1.10 prefixlen 64 scopeid 0x7
+	groups: epair
+	media: Ethernet 10Gbase-T (10Gbase-T <full-duplex>)
+	status: active
+	nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
